@@ -1,28 +1,5 @@
 <!-- templates/home.html -->
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - Data Preprocessing Portal</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-</head>
-<body>
-    <div class="home-container">
-        <h1>Data Preprocessing Options</h1>
-        <ul>
-            <li><a href="#">Address Normalization</a></li>
-            <li><a href="#">RFO Assignment</a></li>
-            <li><a href="#">Repeated Customer</a></li>
-            <li><a href="#">Out of TAT</a></li>
-        </ul>
-    </div>
-</body>
-</html> -->
 
-
-<!-- templates/home.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,6 +17,7 @@
         <div class="processing-box">
             <label for="preprocessing-option">Select Processing Option:</label>
             <select id="preprocessing-option" name="preprocessing-option">
+                <option value="choose-option">Select Option</option>
                 <option value="address-normalization">Address Normalization</option>
                 <option value="rfo-assignment">RFO Assignment</option>
                 <option value="repeated-customer">Repeated Customer</option>
