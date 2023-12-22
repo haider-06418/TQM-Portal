@@ -1,0 +1,162 @@
+/* static/styles.css */
+body {
+    background-color: rgba(202, 34, 34, 0.979);
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+.login-container {
+    max-width: 400px;
+    /* margin: 50px auto; */
+    margin: 0 auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    width: 400px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* label {
+    margin-bottom: 8px;
+} */
+
+/* static/styles.css */
+label {
+    margin-bottom: 8px;
+    color: black; /* Add this line to set the font color to black */
+}
+
+
+/* input {
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+} */
+
+.rounded-button {
+
+    width: 100%;
+
+    padding: 10px;
+    background-color: rgb(255, 0, 0);
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.rounded-button:hover {
+    background-color: #990000;
+}
+
+
+/* static/styles.css
+.home-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: red;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+a:hover {
+    color: #990000;
+} */
+
+
+/* static/styles.css */
+.home-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* .logo {
+    width: 150px;
+    height: auto;
+    margin-bottom: 20px;
+} */
+
+.processing-box {
+    margin-top: 20px;
+}
+
+/* label {
+    display: block;
+    margin-bottom: 8px;
+} */
+
+/* select, input, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+} */
+
+select, button {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #990000;
+}
+
+/* static/styles.css */
+input {
+    width: calc(100% - 22px); /* Adjust the width calculation */
+    padding: 10px;
+    margin-bottom: 16px;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}

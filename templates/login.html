@@ -1,0 +1,40 @@
+<!-- templates/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Data Preprocessing Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- <a href="/"> -->
+        <img src="{{ url_for('static', filename='cybernetlogo.jpeg') }}" alt="Cybernet Logo" class="logo">
+        <h1>TQM Department</h1>
+        <h2>Data Preprocessing Portal</h2>
+        <div class="login-container">
+            <!-- <img src="{{ url_for('static', filename='cybernetlogo.jpeg') }}" alt="Cybernet Logo" class="logo">
+            <h1>TQM Department</h1>
+            <h2>Data Preprocessing Portal</h2> -->
+            <!-- <form action="#" method="post"> -->
+            <form action="{{ url_for('home') }}" method="get">
+                <label for="email">Email:</label>
+                <!-- <input type="text" id="email" name="email" required> -->
+                <input type="text" id="email" name="email">
+
+                <label for="id">ID:</label>
+                <!-- <input type="text" id="id" name="id" required> -->
+                <input type="text" id="id" name="id">
+
+                <input type="submit" value="Login" class="rounded-button">
+            </form>
+            <!-- <input type="submit" value="Login" class="rounded-button"> -->
+            <!-- <p>Don't have an account? <a href="#">Sign up</a></p> -->
+            <input type="submit" value="Sign up" class="rounded-button">
+            <!-- <p>Don't have an account? <button type="button" onclick="window.location.href='/'">Sign up</button></p> -->
+
+        </div>
+    <!-- </a> -->
+</body>
+</html>

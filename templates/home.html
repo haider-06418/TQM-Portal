@@ -1,0 +1,64 @@
+<!-- templates/home.html -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Data Preprocessing Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <h1>Data Preprocessing Options</h1>
+        <ul>
+            <li><a href="#">Address Normalization</a></li>
+            <li><a href="#">RFO Assignment</a></li>
+            <li><a href="#">Repeated Customer</a></li>
+            <li><a href="#">Out of TAT</a></li>
+        </ul>
+    </div>
+</body>
+</html> -->
+
+
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Data Preprocessing Portal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="home-container">
+        <img src="{{ url_for('static', filename='cybernetlogo.jpeg') }}" alt="Cybernet Logo" class="logo">
+        <h1>Data Preprocessing</h1>
+
+        <div class="processing-box">
+            <label for="preprocessing-option">Select Processing Option:</label>
+            <select id="preprocessing-option" name="preprocessing-option">
+                <option value="address-normalization">Address Normalization</option>
+                <option value="rfo-assignment">RFO Assignment</option>
+                <option value="repeated-customer">Repeated Customer</option>
+                <option value="out-of-tat">Out of TAT</option>
+            </select>
+
+            <label for="file-upload">Upload CSV File:</label>
+            <input type="file" id="file-upload" name="file-upload" accept=".csv">
+
+            <button onclick="downloadProcessedFile()">Download Processed File</button>
+        </div>
+    </div>
+
+    <!-- Add script for file download functionality -->
+    <script>
+        function downloadProcessedFile() {
+            // Add functionality for file download here
+            alert("Functionality for file download will be added later.");
+        }
+    </script>
+</body>
+</html>
