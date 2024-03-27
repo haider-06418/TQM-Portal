@@ -25,17 +25,46 @@
             </select>
 
             <label for="file-upload">Upload CSV File:</label>
-            <input type="file" id="file-upload" name="file-upload" accept=".csv">
-
-            <button onclick="downloadProcessedFile()">Download Processed File</button>
+            <form id="upload-form" action="{{ url_for('process_file') }}" method="post" enctype="multipart/form-data">
+                <input type="file" id="file-upload" name="file-upload" accept=".csv">
+                <button type="button" onclick="downloadProcessedFile()">Download Processed File</button>
+            </form>
+            <p id="error-message" style="color: red;"></p>
         </div>
     </div>
 
-    <!-- Add script for file download functionality -->
+    
+    <!-- Add script for file processing functionality -->
     <script>
         function downloadProcessedFile() {
-            // Add functionality for file download here
-            alert("Functionality for file download will be added later.");
+            var option = document.getElementById("preprocessing-option").value;
+            var fileInput = document.getElementById("file-upload");
+            var errorMessage = document.getElementById("error-message");
+
+            // Reset error message
+            errorMessage.textContent = "";
+
+            // Check if a valid option is selected
+            if (option === "choose-option") {
+                errorMessage.textContent = "Select a valid option.";
+                return;
+            }
+
+            // Check if a file is selected
+            if (!fileInput.files.length) {
+                errorMessage.textContent = "Select a file.";
+                return;
+            }
+
+            // Check if the file type is CSV
+            var fileName = fileInput.files[0].name;
+            if (!fileName.endsWith(".csv")) {
+                errorMessage.textContent = "File type must be CSV.";
+                return;
+            }
+
+            // Submit the form for file processing
+            document.getElementById("upload-form").submit();
         }
     </script>
 </body>
