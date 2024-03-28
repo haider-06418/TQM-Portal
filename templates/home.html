@@ -22,9 +22,11 @@
                 <option value="rfo-assignment">RFO Assignment</option>
                 <option value="repeated-customer">Repeated Customer</option>
                 <option value="out-of-tat">Out of TAT</option>
+                <option value="consumer-ticket-analysis-report">Consumer Ticket Analysis Report</option>
+                <option value="corporate-ticket-analysis-report">Corporate Ticket Analysis Report</option>
             </select>
 
-            <label for="file-upload">Upload CSV File:</label>
+            <label for="file-upload">Upload File:</label>
             <form id="upload-form" action="{{ url_for('process_file') }}" method="post" enctype="multipart/form-data">
                 <input type="file" id="file-upload" name="file-upload" accept=".csv">
                 <button type="button" onclick="downloadProcessedFile()">Download Processed File</button>
@@ -33,6 +35,10 @@
         </div>
     </div>
 
+    <!-- Side note indicating supported file types -->
+    <div class="side-note">
+        <p>Note: Supported file types are CSV and Excel only.</p>
+    </div>
     
     <!-- Add script for file processing functionality -->
     <script>
