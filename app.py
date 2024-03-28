@@ -1,7 +1,7 @@
 # app.py
 from flask import Flask, render_template, redirect, url_for, request, send_file
 import os
-import pandas as pd
+import subprocess
 
 app = Flask(__name__)
 
@@ -40,17 +40,28 @@ def process_file():
     return send_file(processed_file, as_attachment=True)
 
 def process_data(option, file):
-    # Implement your processing logic here
-    # You can create separate Python programs for each option
-    # For now, just save the file with a different name
-    filename, file_extension = os.path.splitext(file.filename)
-    processed_filename = f"{filename}_processed{file_extension}"
+    # Define the path to the Python script for each option
+    script_paths = {
+        'address-normalization': 'scripts/address_normalization.py',
+        'rfo-assignment': 'scripts/rfo_assignment.py',
+        'repeated-customer': 'scripts/repeated_customer.py',
+        'out-of-tat': 'scripts/out_of_tat.py'
+    }
 
-    # Save the processed file to the static folder
-    processed_file_path = os.path.join('static', processed_filename)
-    file.save(processed_file_path)
+    # Get the path to the script for the selected option
+    script_path = script_paths.get(option)
+    if not script_path:
+        return f"No program found for option: {option}"
 
-    return processed_file_path
+    # Save the uploaded file
+    filename = os.path.join('uploads', file.filename)
+    file.save(filename)
+
+    # Execute the script with the uploaded file as input
+    output_file = os.path.join('static', f'{option}_processed.csv')
+    subprocess.run(['python', script_path, filename, output_file])
+
+    return output_file
 
 if __name__ == '__main__':
     app.run(debug=True)
